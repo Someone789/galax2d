@@ -110,7 +110,7 @@ end
 fa0 = sqrt(c00*(pp+2)); rcr = (om/fa0)^(2/pp); a22 = anm(2,2); % (1+n/2,1+m/2)
 b = zeros(1,5); b(2) = 3.*a22/(pp*(pp+5)); % c22=a22/(p*(p+5)), P22(0)=3
 % rotating bar with cut-off
-if(gpar.cutoff > 0 & om ~= 0),
+if( (gpar.cutoff > 0) && (om ~= 0) ),
   switch( gpar.cutoff ),
     case 1, rcp = (om/fa0)^2; % cut-off at co-rotation
     case 2, fa1 = sqrt(pp+4); % cut-off at the Outer Lindblad Resonance

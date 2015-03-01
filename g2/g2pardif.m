@@ -8,7 +8,7 @@ for k=1:length(names0),
     if(gv0 ~= gv1), 
       fprintf(1,'  %s: %g -> %g\n',namek,gv0,gv1); ndif = ndif+1;
     end
-  elseif(isstr(gv0)),
+  elseif(ischar(gv0)),
     if(~strcmp(gv0,gv1)),
       fprintf(1,'  %s: %s -> %s\n',namek,gv0,gv1); ndif = ndif+1;
     end

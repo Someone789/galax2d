@@ -8,7 +8,11 @@
 % _____________________________________________________________________________
 clear all; close all; fclose all;
 %
-gpar = G2Parameters; % default parameters in class G2Parameters 
+if(exist('OCTAVE_VERSION', 'builtin')),
+  gpar = g2setpar();
+else
+  gpar = G2Parameters; % default parameters in class G2Parameters 
+end
 % _____________________________________________________________________________
 % change parameters by using the file g2myparms.m, if any
 % _____________________________________________________________________________
@@ -142,7 +146,7 @@ for klevel=mlevel:nlevel, % loop for successive refinement, coarse to fine
       % convergence history
       conv = [conv;res];
       % plot latest
-      g2pltr(ww,grd,aux,conv,1); pause(0.1);
+      g2pltr(ww,grd,aux,conv,1);
       %
       if(k == 1), % store first value
         if(hasold > -1), res0 = res;
@@ -152,8 +156,8 @@ for klevel=mlevel:nlevel, % loop for successive refinement, coarse to fine
         if(gpar.print > -1), fprintf(1,'%5d: %g\n',k,res/res0); end
         if(res > 1.e4*res0),
           fprintf(1,'Divergence?\n'); break;
-        elseif( (korder < 2 && res < gpar.resfactor1*res0) | ...
-                              (res < gpar.resfactor2*res0))
+        elseif( ((korder < 2) && (res < gpar.resfactor1*res0)) || ...
+                                 (res < gpar.resfactor2*res0))
           break;         
         end;
       end

@@ -82,7 +82,7 @@ for kplot=1:length(mplot),
     'FaceColor','flat','EdgeColor','none','CDataMapping','scaled');
   axis equal tight; xlabel('x'); ylabel('y'); 
   if(cmapc == 2), ax = max(max(abs(h1))); caxis(ax*[-1 1]); end
-  colorbar vert;
+  colorbar;
   title(ktitle);
 end
 %
@@ -100,6 +100,6 @@ if(nargin > 3 && length(conv) > 1),
   axis([0 icmax 1.e-16 1.e2]);
 end
 % refresh plot
-set(0,'CurrentFigure',myFigureHandle);
+set(0,'CurrentFigure',myFigureHandle); drawnow();
 %EOF
 
