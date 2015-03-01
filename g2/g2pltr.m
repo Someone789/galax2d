@@ -100,6 +100,6 @@ if(nargin > 3 && length(conv) > 1),
   axis([0 icmax 1.e-16 1.e2]);
 end
 % refresh plot
-set(0,'CurrentFigure',myFigureHandle);
+set(0,'CurrentFigure',myFigureHandle); drawnow();
 %EOF
 

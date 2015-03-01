@@ -22,7 +22,7 @@ nlen = 64;
 %
 nle1 = nlen-1; rm0 = (0:nle1)/nle1;
 rm1 = [(0:nle1-1)/(nle1+nshft) 1]; 
-rm3 = max(0,min(1,rm1)); if(gpow ~= 1 & gpow ~= 0) rm3 = rm3.^gpow; end
+rm3 = max(0,min(1,rm1)); if((gpow ~= 1) && (gpow ~= 0)), rm3 = rm3.^gpow; end
 % negative values:
 r1 = rm1.^2; 
 g1 = r1; b1 = max(r1,min(1,6*r1));
