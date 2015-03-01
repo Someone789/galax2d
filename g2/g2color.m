@@ -24,7 +24,8 @@ nle1 = nlen-1; rm0 = (0:nle1)/nle1;
 rm1 = [(0:nle1-1)/(nle1+nshft) 1]; 
 rm3 = max(0,min(1,rm1)); if(gpow ~= 1 & gpow ~= 0) rm3 = rm3.^gpow; end
 % negative values:
-r1 = rm1.^2; g1 = r1; b1 = max(r1,min(1,6*rm1.^2));
+r1 = rm1.^2; 
+g1 = r1; b1 = max(r1,min(1,6*r1));
 % positive red,green.blue
 r2 = 1+0*rm3; rmf = fliplr(rm3); g2 = rmf; b2 = rmf;
 g2 = g2-0.1+0.65*sin(pi*rm0).^4; 

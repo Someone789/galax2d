@@ -82,7 +82,7 @@ for kplot=1:length(mplot),
     'FaceColor','flat','EdgeColor','none','CDataMapping','scaled');
   axis equal tight; xlabel('x'); ylabel('y'); 
   if(cmapc == 2), ax = max(max(abs(h1))); caxis(ax*[-1 1]); end
-  colorbar vert;
+  colorbar;
   title(ktitle);
 end
 %
