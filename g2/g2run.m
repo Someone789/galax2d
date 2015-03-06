@@ -8,11 +8,8 @@
 % _____________________________________________________________________________
 clear all; close all; fclose all;
 %
-if(exist('OCTAVE_VERSION', 'builtin')),
-  gpar = g2setpar();
-else
-  gpar = G2Parameters; % default parameters in class G2Parameters 
-end
+% gpar = G2Parameters; % default parameters in class G2Parameters 
+gpar = g2setpar();
 % _____________________________________________________________________________
 % change parameters by using the file g2myparms.m, if any
 % _____________________________________________________________________________

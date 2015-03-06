@@ -1,5 +1,6 @@
 % G2Parameters.m                                Copyright (c) 2013, W.A. Mulder
 % class holding user and code parameters, defaults are set here
+% does not work with Octave, use g2setpar() instead
 % _____________________________________________________________________________
 % Filenames:
 %    label          for naming output files
